@@ -1,0 +1,44 @@
+data:
+  train_ds: "train.csv"
+  test_ds: "test.csv"
+  val_ds: "validation.csv"
+  is_distributed: "False"
+train:
+  isolates_to_sample_per_batch: 300000
+  n_metadata: 5
+  minimum_size_of_predictors: 4
+  d_mean_values: {3: 3, 4: 4, 5: 5, 6: 5.5, 7: 6, 8: 6.5, 9: 7, 10: 8, 11: 8, 12: 9, 13: 9, 14: 9, 15: 9}
+  d_max_samples: {3: 1, 4: 2, 5: 2, 6: 3, 7: 3, 8: 3, 9: 3, 10: 4, 11: 4, 12: 4, 13: 4, 14: 5, 15: 5}
+  batch_size: 512
+  ab2_weights: {'OFX': [0.3,0.7],'TOB': [0.15,0.85], 'CAZ': [0.3,0.7], 'LVX': [0.3,0.7], 'FEP': [0.3,0.7], 'NAL': [0.45,0.55], 'GEN': [0.15,0.85], 'CRO': [0.3,0.7], 'TZP': [0.15,0.85], 'CIP': [0.3,.7], 'MFX': [0.3,0.7], 'AMC': [0.45,0.55], 'CTX': [0.3,0.7], 'AMP': [0.45,0.55], 'AMX': [0.45,0.55], 'PIP': [0.45,0.55]}
+  num_epochs: 200
+  learning_rate: 0.000001
+  learning_rate_warm_up: 10000
+  observations_per_epoch: 512000
+test:
+  isolates_to_sample_per_batch: 40000
+  observations_per_epoch: 256000
+  batch_size: 512
+model:
+  encode_response: {'AMC_S': 0, 'AMC_R': 1, 'AMP_S': 0,'AMP_R': 1, 'AMX_S': 0, 'AMX_R': 1, 'CAZ_S': 0, 'CAZ_R': 1, 'CIP_S': 0, 'CIP_R': 1, 'CRO_S': 0, 'CRO_R': 1, 'CTX_S': 0, 'CTX_R': 1, 'FEP_S': 0, 'FEP_R': 1, 'GEN_S': 0, 'GEN_R': 1, 'LVX_S': 0, 'LVX_R': 1, 'MFX_S': 0, 'MFX_R': 1, 'NAL_S': 0, 'NAL_R': 1, 'OFX_S': 0, 'OFX_R': 1, 'PIP_S': 0, 'PIP_R': 1,'TOB_S': 0, 'TOB_R': 1, 'TZP_S': 0, 'TZP_R': 1}
+  pos_response: {'AMC_R': 1, 'AMP_R': 1, 'AMX_R': 1, 'CAZ_R': 1, 'CIP_R': 1, 'CRO_R': 1, 'CTX_R': 1,'FEP_R': 1,'GEN_R': 1,'LVX_R': 1, 'MFX_R': 1,'NAL_R': 1, 'OFX_R': 1, 'PIP_R': 1, 'TOB_R': 1, 'TZP_R': 1}
+  hidden_size: 64
+  layer_norm_eps: 0.00001 
+  dropout_rate_PWFF: 0.1 
+  dropout_rate_attention: 0.1 
+  num_attention_heads: 1
+  self_attention_internal_dimension: 128
+  FFN_internal_dimension: 128 
+  encoder_stack_depth: 1
+  max_position_embeddings: 19
+  number_ab: 16
+  number_out: 2
+vocab:
+  vocab: 'vocabulary_obj.pth'
+  types_ab: {"Penicillin": ["AMC","AMP","AMX","PIP","TZP"], "Cephalosporin": ["CAZ","CRO","CTX","FEP"],"Fluoroquinolones": ["CIP","LVX","MFX","NAL","OFX"],"Aminoglycoside": ["GEN","TOB"]}
+  types_ab2: {"AMC": "Penicillin", "AMP": "Penicillin", "AMX": "Penicillin", "PIP": "Penicillin", "TZP": "Penicillin", "CAZ": "Cephalosporin", "CRO": "Cephalosporin", "CTX": "Cephalosporin", "FEP": "Cephalosporin", "CIP": "Fluoroquinolones", "LVX": "Fluoroquinolones", "MFX": "Fluoroquinolones", "NAL": "Fluoroquinolones", "OFX": "Fluoroquinolones", "GEN": "Aminoglycoside", "TOB": "Aminoglycoside"}
+  pad_position: 0
+val:
+  observations_train: 1000000
+  observations_test: 100000
+  observations_val: 100000
