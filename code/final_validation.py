@@ -69,10 +69,10 @@ def load_previous_model(model_folder, bert_model, classification_model, rank=0, 
     else:
         if rank==0:
             print("Yes")
-        if os.path.exists(os.path.join(model_folder, "pretrain_bert.torch")):
+        if os.path.exists(os.path.join(model_folder, "pretrain_transformer.torch")):
             if rank==0:
                 print("loading previous model")
-            bert_model.load_state_dict(torch.load(os.path.join(model_folder, "pretrain_bert.torch")))
+            bert_model.load_state_dict(torch.load(os.path.join(model_folder, "pretrain_transformer.torch")))
             classification_model.load_state_dict(torch.load(os.path.join(model_folder, "pretrain_classification.torch")))
         if os.path.exists(os.path.join(model_folder, "pretrain_state.pkl")):
             if rank==0:
@@ -81,10 +81,10 @@ def load_previous_model(model_folder, bert_model, classification_model, rank=0, 
         else:
             if rank==0:
                 print("No previous state, loading pre_train")
-            if os.path.exists(os.path.join(model_folder, "pretrain_bert.torch")):
+            if os.path.exists(os.path.join(model_folder, "pretrain_transformer.torch")):
                 if rank==0:
                     print("Loading pre_train")
-                bert_model.load_state_dict(torch.load(os.path.join(model_folder, "pretrain_bert.torch")))
+                bert_model.load_state_dict(torch.load(os.path.join(model_folder, "pretrain_transformer.torch")))
             else:
                 if rank==0:
                     print("No previous pre-train")
