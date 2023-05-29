@@ -4,15 +4,15 @@ Rapid and accurate diagnostics of bacterial infections are necessary for efficie
 
 
 ## Software dependencies
-Python 3.9.5
-PyTorch 1.11.0
-CUDA 11.3.1
-IPython 7.25.0 
-GCCcore 10.3.0
-PyYAML 5.4.1 
+- Python 3.9.5
+- PyTorch 1.11.0
+- CUDA 11.3.1
+- IPython 7.25.0 
+- GCCcore 10.3.0
+- PyYAML 5.4.1 
 
 ## GPU
-The model was tested on one NVIDIA Tesla A100 HGX GPU. 
+The model was ran on one NVIDIA Tesla A100 HGX GPU. 
 
 ## Running
 - Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/code/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/code/vocabulary_obj.pth) in the working directory.
