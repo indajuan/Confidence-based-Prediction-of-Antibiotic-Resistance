@@ -16,7 +16,7 @@ The model was ran on one NVIDIA Tesla A100 HGX GPU.
 
 ## Running
 - Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/code/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/code/vocabulary_obj.pth) in the working directory.
-- The [example dataset] contains the basic structure of an input file.
+- The [example dataset](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/code/example_input_file.csv) contains the basic structure of an input file.
    - Replace Age, Country, and Gender valid values present in the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/code/vocabulary_obj.pth)
 - An example of the model's architecture, data points creation, training and testing parameters can be found in the [model's configuration file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/code/model2/config.yaml)
 
