@@ -31,6 +31,7 @@ will run the script train.py, taking the configuration file *config.yaml* presen
 python final_val.py <model_folder> config.yaml
 ```
 will run the script final_val.py, taking the training, testing and validation data sets to create data points and do predictions of antibiotic susceptibility tests results on them. The output of the command are three files train_final.csv, test_final.csv, and validation_final.csv, containing the predictions on the data points created from the corresponding data sets in the format:
-[Country, Age, Gender, Date, and at least 4 antibiotic susceptibility tests results separated by commas]", <antibiotic predicted>, 1,0,"[-0.1634320616722107, -0.7023367285728455]"
+
+"Input data" (Country, Age, Gender, Date, and at least 4 antibiotic susceptibility tests results separated by commas), "antibiotic predicted", "true phenotype" (0: susceptible, 1:resistant), "predicted phenotype" (0: susceptible, 1:resistant), "output values from the neural network" (susceptible , resistant)
 
 
