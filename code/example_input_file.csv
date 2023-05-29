@@ -1,4 +1,3 @@
-#Replace Country, Age, and Gender for valid values from the vocabulary_obj.pth file
 <cls> Country Age Gender 2017_09 CRO_S GEN_S AMP_S CIP_S TZP_S AMC_S CTX_S CAZ_S TOB_S AMX_S
 <cls> Country Age Gender 2015_08 CIP_S GEN_S TZP_S CRO_S
 <cls> Country Age Gender 2016_02 TOB_S FEP_S CAZ_S CIP_S CTX_S GEN_S OFX_S LVX_S NAL_S AMC_S AMX_S
