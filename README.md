@@ -45,12 +45,13 @@ The model will use as input data:
 
 To predict the AST for CAZ and AMP
 
-## Valid entries 
-
 ### Example data
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
+
+
+## Valid entries 
 
 ### Pathogen data
 - The pathogens and the anibiotics the model includes for each of them are:
