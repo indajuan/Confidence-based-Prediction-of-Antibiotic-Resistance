@@ -12,18 +12,25 @@ We present a deep-learning method that uses transformers to merge patient data w
 - PyYAML 5.4.1 
 
 ## Running
-- Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/code/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/code/vocabulary_obj.pth) in the working directory.
+- Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj.pth) in the working directory.
 
 ### Input file 
 Input file using patient information should follow the format:
 Strain, Patient_information, AST used as features, AST to predict. For example, 
+
+```
 ESCCOL, HR F 70 2014_10, CRO_S AMX_R CIP_S GEN_S, CAZ_S AMP_R
 PSEAER, FR M 80 2013_10, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 ESCCOL, UK F 66 2010_10, GEN_R CAZ_R CIP_R TOB_R, CTX_R
+```
 
 Input file to run the model without patient information should follow the format:
 Strain, Patient_information, AST used as features, AST to predict. For example, 
+
+```
 ESCCOL, NA, CRO_S AMX_R CIP_S GEN_S, CAZ_S AMP_R
+PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
+```
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
@@ -44,11 +51,16 @@ This will run the script run_model.py, taking the configuration file *config.yam
 
 For example,
 - With patient data
+```
 id, Antibiotic, AST_true, AST_prediction, Antibiotic_predictors, Patient_data, Output_neural_networks
 1, AMC, R, R, ESCCOL CAZ_S AMP_R CIP_S CTX_S, IT F 88 2017_3, "[-0.1192, 0.092]"
+```
 
 - Without patient data
+```
 id,Y,Y_resp,Y_pred,Antibiotic_predictors,Patient_data,Output_neural_networks
 1, AMC, R, R, ESCCOL CAZ_S AMP_R CIP_S CTX_S, <unk>, "[-0.1192, 0.092]"
+```
+
 
 
