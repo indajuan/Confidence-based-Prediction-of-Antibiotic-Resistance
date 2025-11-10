@@ -63,7 +63,7 @@ id, Antibiotic, AST_true, AST_prediction, Antibiotic_predictors, Patient_data, O
 
 - Without patient data
 ```
-id,Y,Y_resp,Y_pred,Antibiotic_predictors,Patient_data,Output_neural_networks
+id, Antibiotic, AST_true, AST_prediction, Antibiotic_predictors, Patient_data, Output_neural_networks
 1, AMC, R, R, ESCCOL CAZ_S AMP_R CIP_S CTX_S, <unk>, "[-0.1192, 0.092]"
 ```
 
