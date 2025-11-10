@@ -45,6 +45,8 @@ The model will use as input data:
 
 To predict the AST for CAZ and AMP
 
+## Valid entries 
+
 ### Example data
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
@@ -58,7 +60,7 @@ To predict the AST for CAZ and AMP
 
 ### AST data
 - The AST for antibiotic "X" is encoded concatenated to the antibiotic as "X\_R", if the isolate is resistant to antibiotic "X", or "X\_S", if it is susceptible. 
-- To predict an AST for antibiotic "X", when it has not been tested and the true information is missing, it can be assume to be susceptible, "X\_S". 
+- To predict an AST for antibiotic "X", when it has not been tested and the true information is missing, it should still be complemented with either \_S or \_R.
 
 ### Patient data
 - The valid values for Age, Country, Gender, and Date of isolate sampleing are listed below, non valid words will be converted to a word representing an unkown word. If one variable is missing, it will instead be padded. It is recommended to leave the space empty. 
