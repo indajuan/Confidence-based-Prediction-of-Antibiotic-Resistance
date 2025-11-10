@@ -21,7 +21,7 @@ ESCCOL, HR F 70 2014_10, CRO_S AMX_R CIP_S GEN_S, CAZ_S AMP_S
 ```
 
 The model will use as input data:
-- The strain of the isolate: ECCOL = _E. coli_
+- The strain of the isolate: ECCOL corresponds to _E. coli_
 - Patient information: country = HR, gender = F, age = 70, date of sample = 2014\_10
 - Using as predictors: CRO_S AMX_R CIP_S GEN_S
 To predict the AST for CAZ and AMP
@@ -34,7 +34,7 @@ ESCCOL, NA, CRO_S AMX_R CIP_S GEN_S, CAZ_S AMP_R
 PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 ```
 The model will use as input data:
-- The strain of the isolate: ECCOL = _E. coli_
+- The strain of the isolate: ECCOL corresponds to _E. coli_
 - No patient information
 - Using as predictors: CRO_S AMX_R CIP_S GEN_S
 To predict the AST for CAZ and AMP
