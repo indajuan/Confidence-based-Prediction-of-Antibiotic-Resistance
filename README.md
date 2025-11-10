@@ -13,6 +13,8 @@ We present a deep-learning method that uses transformers to merge patient data w
 
 
 ## Input file 
+
+### Using patient information
 Input file using patient information should follow the format:
 Strain, Patient_information, AST used as features, AST to predict. For example, 
 
@@ -23,8 +25,11 @@ ESCCOL, HR F 70 2014_10, CRO_S AMX_R CIP_S GEN_S, CAZ_S AMP_S
 The model will use as input data:
 - The strain of the isolate: ECCOL corresponds to _E. coli_
 - Patient information: country = HR, gender = F, age = 70, date of sample = 2014\_10
-- Using as predictors: CRO_S AMX_R CIP_S GEN_S
+- Using the known AST: CRO_S AMX_R CIP_S GEN_S
+
 To predict the AST for CAZ and AMP
+
+### Without patient information
 
 Input file to run the model without patient information should follow the format:
 Strain, Patient_information, AST used as features, AST to predict. For example, 
@@ -36,8 +41,11 @@ PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 The model will use as input data:
 - The strain of the isolate: ECCOL corresponds to _E. coli_
 - No patient information
-- Using as predictors: CRO_S AMX_R CIP_S GEN_S
+- Using the known AST: CRO_S AMX_R CIP_S GEN_S
+
 To predict the AST for CAZ and AMP
+
+### Example data
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
