@@ -12,7 +12,7 @@ We present a deep-learning method that uses transformers to merge patient data w
 - PyYAML 5.4.1 
 
 ## Running
-- Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the working directory.
+- Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the data directory.
 
 ### Input file 
 Input file using patient information should follow the format:
@@ -34,8 +34,13 @@ PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
-- Replace Age, Country, and Gender valid values present in the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth), otherwise the model will convert the words to the token <unk>.
-- The main configuration of the file should be placed inside each model.
+- The valid values for Age, Country, Gender, and Date of isolate sampleing are listed below, non valid words will be converted to the token <unk>. If one variable is missing, it will be padded with <pad>.
+- The main configuration of the file should be placed inside each model
+- Countries:
+AT, BE, BG, CY, CZ, DE, DK, EE, EL, ES, FI, FR, HR, HU, IE, IS, IT, LT, LU, LV, MT, NL, NO, PL,  PT, RO, SE, SI, SK, UK
+- Age: 0 to 120, or <unk>
+- Gender: F, M, or <unk>
+- Date: from 2007_01 (where 2007 is the year and 01 is the month), to 2020_9
 
 - To run the model with patient data
 ```
