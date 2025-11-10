@@ -11,11 +11,8 @@ We present a deep-learning method that uses transformers to merge patient data w
 - GCCcore 10.3.0
 - PyYAML 5.4.1 
 
-## Running
-- The architecture of the model and basic function are in the [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) folder.
-- The model calls the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the data directory.
 
-### Input file 
+## Input file 
 Input file using patient information should follow the format:
 Strain, Patient_information, AST used as features, AST to predict. For example, 
 
@@ -35,6 +32,18 @@ PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
+
+### Pathogen data
+- The pathogens and the anibiotics the model includes for each of them are:
+- _E. coli_, code: GEN. Antibiotic: CTX, AMP, LVX, TZP, CAZ, FEP, PIP, AMC, AMX, CIP, TOB, CRO, NAL, OFX, and MFX
+- _P. aeruginosa_, code: PSEAER. Antibiotics: AMC, AMP, AMX, PIP, TZP, CAZ, CRO, CTX, FEP, CIP, LVX, MFX, NAL, OFX, AMK, GEN, TOB, ETP, IPM, and MEM
+- K. pneumoniae, code: KLEPNE. Antibiotics: AMC, CIP, GEN, CAZ, IPM, CTX, TOB, AMK, MEM, LVX, TZP, FEP, MFX, CRO, ETP, OFX, NAL, and PIP.
+
+### AST data
+- The AST for antibiotic "X" is encoded concatenated to the antibiotic as "X\_R", if the isolate is resistant to antibiotic "X", or "X\_S", if it is susceptible. 
+- To predict an AST for antibiotic "X", when it has not been tested and the true information is missing, it can be assume to be susceptible, "X\_S". 
+
+### Patient data
 - The valid values for Age, Country, Gender, and Date of isolate sampleing are listed below, non valid words will be converted to a word representing an unkown word. If one variable is missing, it will instead be padded. It is recommended to leave the space empty. 
 - The main configuration of the file should be placed inside each model
 - Countries correspond to abbreviations of members of the European Centre for Disease Prevention and Control:
@@ -42,6 +51,10 @@ AT, BE, BG, CY, CZ, DE, DK, EE, EL, ES, FI, FR, HR, HU, IE, IS, IT, LT, LU, LV, 
 - Age: 0 to 120
 - Gender: F, M
 - Date: from 2007_01 (where 2007 is the year and 01 is the month), to 2020_9
+
+## Running the model
+- The architecture of the model and basic function are in the [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) folder.
+- The model calls the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the data directory.
 
 - To run the model with patient data
 ```
