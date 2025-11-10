@@ -34,12 +34,12 @@ PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 
 - The [example dataset with patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_with_patient.csv) contains the basic structure of an input file with patient data.
 - The [example dataset without patient data](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/edit/main/data/example_without_patient.csv) contains the basic structure of an input file with patient data.
-- The valid values for Age, Country, Gender, and Date of isolate sampleing are listed below, non valid words will be converted to the token <unk>. If one variable is missing, it will be padded with <pad>.
+- The valid values for Age, Country, Gender, and Date of isolate sampleing are listed below, non valid words will be converted to the token "<unk>". If one variable is missing, it will be padded with "<pad>". It is recommended to leave the space empty. 
 - The main configuration of the file should be placed inside each model
 - Countries correspond to abbreviations of members of the European Centre for Disease Prevention and Control:
 AT, BE, BG, CY, CZ, DE, DK, EE, EL, ES, FI, FR, HR, HU, IE, IS, IT, LT, LU, LV, MT, NL, NO, PL,  PT, RO, SE, SI, SK, UK
-- Age: 0 to 120, or <unk>
-- Gender: F, M, or <unk>
+- Age: 0 to 120
+- Gender: F, M
 - Date: from 2007_01 (where 2007 is the year and 01 is the month), to 2020_9
 
 - To run the model with patient data
