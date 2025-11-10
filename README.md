@@ -35,8 +35,8 @@ PSEAER, NA, IPM_S MEM_S TZP_S AMK_S PIP_S FEP_S CIP_S, GEN_S TOB_S CAZ_S
 
 ### Pathogen data
 - The pathogens and the anibiotics the model includes for each of them are:
-- _E. coli_, code: GEN. Antibiotic: CTX, AMP, LVX, TZP, CAZ, FEP, PIP, AMC, AMX, CIP, TOB, CRO, NAL, OFX, and MFX
-- _P. aeruginosa_, code: PSEAER. Antibiotics: AMC, AMP, AMX, PIP, TZP, CAZ, CRO, CTX, FEP, CIP, LVX, MFX, NAL, OFX, AMK, GEN, TOB, ETP, IPM, and MEM
+- _E. coli_, code: ESCCOL. Antibiotic: GEN, CTX, AMP, LVX, TZP, CAZ, FEP, PIP, AMC, AMX, CIP, TOB, CRO, NAL, OFX, and MFX.
+- _P. aeruginosa_, code: PSEAER. Antibiotics: AMC, AMP, AMX, PIP, TZP, CAZ, CRO, CTX, FEP, CIP, LVX, MFX, NAL, OFX, AMK, GEN, TOB, ETP, IPM, and MEM.
 - K. pneumoniae, code: KLEPNE. Antibiotics: AMC, CIP, GEN, CAZ, IPM, CTX, TOB, AMK, MEM, LVX, TZP, FEP, MFX, CRO, ETP, OFX, NAL, and PIP.
 
 ### AST data
