@@ -12,7 +12,8 @@ We present a deep-learning method that uses transformers to merge patient data w
 - PyYAML 5.4.1 
 
 ## Running
-- Save the folder [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) and the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the data directory.
+- The architecture of the model and basic function are in the [torch_app](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/tree/main/torch_app) folder.
+- The model calls the [vocabulary file](https://github.com/indajuan/Confidence-based-Prediction-of-Antibiotic-Resistance/blob/main/data/vocabulary_obj_test2024.pth) in the data directory.
 
 ### Input file 
 Input file using patient information should follow the format:
