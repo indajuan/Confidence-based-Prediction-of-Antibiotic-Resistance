@@ -1,0 +1,26 @@
+train:
+  n_metadata: 5
+  minimum_size_of_predictors: 4
+  batch_size: 512
+  ab2_weights: {'OFX': [0.3,0.7],'TOB': [0.15,0.85],'AMK': [0.15,0.85], 'ETP': [0.15,0.85], 'IPM': [0.15,0.85], 'MEM': [0.15,0.85], 'CAZ': [0.3,0.7], 'LVX': [0.3,0.7], 'FEP': [0.3,0.7], 'NAL': [0.45,0.55], 'GEN': [0.15,0.85], 'CRO': [0.3,0.7], 'TZP': [0.15,0.85], 'CIP': [0.3,.7], 'MFX': [0.3,0.7], 'AMC': [0.45,0.55], 'CTX': [0.3,0.7], 'AMP': [0.45,0.55], 'AMX': [0.45,0.55], 'PIP': [0.45,0.55]}
+test:
+  batch_size: 512
+model:
+  encode_response: {'AMC_S': 0, 'AMC_R': 1, 'AMP_S':0,  'AMP_R':1, 'AMX_S':0, 'AMX_R':1, 'CAZ_S':0, 'CAZ_R':1, 'CIP_S':0, 'CIP_R':1, 'CRO_S':0, 'CRO_R':1, 'CTX_S':0, 'CTX_R':1, 'FEP_S':0, 'FEP_R':1,'GEN_S':0, 'GEN_R':1, 'LVX_S':0, 'LVX_R':1,'MFX_S':0, 'MFX_R':1, 'NAL_S':0, 'NAL_R':1,'OFX_S':0, 'OFX_R':1, 'PIP_S':0, 'PIP_R':1, 'TOB_S':0, 'TOB_R':1, 'TZP_S':0, 'TZP_R':1, 'AMK_S':0, 'AMK_R':1, 'ETP_S':0, 'ETP_R':1,'IPM_S':0, 'IPM_R':1, 'MEM_S':0, 'MEM_R':1}
+  pos_response: {'AMC_R': 1, 'AMP_R': 1, 'AMX_R': 1, 'CAZ_R': 1, 'CIP_R': 1, 'CRO_R': 1, 'CTX_R': 1,'FEP_R': 1,'GEN_R': 1,'LVX_R': 1, 'MFX_R': 1,'NAL_R': 1, 'OFX_R': 1, 'PIP_R': 1, 'TOB_R': 1, 'TZP_R': 1, 'AMK_R': 1, 'ETP_R':1, 'IPM_R':1, 'MEM_R':1} 
+  hidden_size: 128
+  layer_norm_eps: 0.00001 
+  dropout_rate_PWFF: 0.1 
+  dropout_rate_attention: 0.1 
+  num_attention_heads: 2
+  self_attention_internal_dimension: 256
+  FFN_internal_dimension: 256 
+  encoder_stack_depth: 2
+  max_position_embeddings: 21
+  number_ab: 20
+  number_out: 2
+vocab:
+  vocab: 'data/vocabulary_obj_test2024.pth'
+  types_ab: {"Penicillin": ["AMC","AMP","AMX","PIP","TZP"], "Cephalosporin": ["CAZ","CRO","CTX","FEP"], "Fluoroquinolones": ["CIP","LVX","MFX","NAL","OFX"], "Aminoglycoside": ["GEN","TOB", "AMK"], "Carbapenem": ["ETP","IPM","MEM"]}
+  types_ab2: {"AMC":"Penicillin", "AMP": "Penicillin", "AMX":"Penicillin", "PIP": "Penicillin", "TZP": "Penicillin", "CAZ": "Cephalosporin", "CRO":"Cephalosporin", "CTX": "Cephalosporin", "FEP":"Cephalosporin", "CIP": "Fluoroquinolones", "LVX": "Fluoroquinolones", "MFX": "Fluoroquinolones", "NAL": "Fluoroquinolones", "OFX": "Fluoroquinolones", "GEN": "Aminoglycoside", "TOB": "Aminoglycoside", "AMK": "Aminoglycoside", "ETP":"Carbapenem", "IPM":"Carbapenem", "MEM":"Carbapenem"}
+  pad_position: 0
