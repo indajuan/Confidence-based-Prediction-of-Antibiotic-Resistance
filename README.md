@@ -101,5 +101,22 @@ id, Antibiotic, AST_true, AST_prediction, Antibiotic_predictors, Patient_data, O
 1, AMC, R, R, ESCCOL CAZ_S AMP_R CIP_S CTX_S, <unk>, "[-0.1192, 0.092]"
 ```
 
+## Conformal prediction
+
+Run the script *CICP/return_prediction_sets.R* as follows
+
+```
+Rscript CICP/return_prediction_sets.R <output of transormer> <output of conformal prediction> <model>
+
+```
+
+Example: 
+```
+Rscript CICP/return_prediction_sets.R data/output_model.csv cp_output.csv full
+
+```
+
+There are 4 predefined confidence levels, 97.5%, 95%, 90%, and 85%. It is possible to build your own prediction set at a different confidence level by adding "S" to the prediction set if the value in column *ps* is larger than 1-confidence level, and adding "R" to the prediction set if the value in column *pr* is larger than 1-confidence level. 
+
 
 
