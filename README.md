@@ -116,7 +116,7 @@ Rscript CICP/return_prediction_sets.R data/output_model.csv cp_output.csv full
 
 ```
 
-There are 4 predefined confidence levels, 97.5%, 95%, 90%, and 85%. It is possible to build your own prediction set at a different confidence level by adding "S" to the prediction set if the value in column *ps* is larger than 1-confidence level, and adding "R" to the prediction set if the value in column *pr* is larger than 1-confidence level. 
+There are 4 predefined confidence levels, 97.5%, 95%, 90%, and 85%. It is possible to build your own prediction set at a different confidence level by adding "S" to the prediction set if the value in column *ps* is larger than "1 - confidence level", and adding "R" to the prediction set if the value in column *pr* is larger than "1 - confidence level". 
 
 
 
