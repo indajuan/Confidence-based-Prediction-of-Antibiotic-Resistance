@@ -110,6 +110,8 @@ Rscript CICP/return_prediction_sets.R <output of transormer> <output of conforma
 
 ```
 
+and *model* is either "full", when the transformer used patient information, and "no patient", when it did not.
+
 Example: 
 ```
 Rscript CICP/return_prediction_sets.R data/output_model.csv cp_output.csv full
